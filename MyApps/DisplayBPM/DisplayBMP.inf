@@ -1,0 +1,30 @@
+[Defines]
+  INF_VERSION                    = 1.25 
+  BASE_NAME                      = DisplayBMP
+  FILE_GUID                      = 4ea87c54-7895-4dcd-0455-747010f3ce51
+  MODULE_TYPE                    = UEFI_APPLICATION
+  VERSION_STRING                 = 1.1
+  ENTRY_POINT                    = ShellCEntryLib
+  VALID_ARCHITECTURES            = X64
+
+[Sources]
+  DisplayBMP.c
+
+[Packages]
+  MdePkg/MdePkg.dec
+  ShellPkg/ShellPkg.dec
+
+[LibraryClasses]
+  ShellCEntryLib
+  ShellLib
+  BaseLib
+  BaseMemoryLib
+  UefiLib
+  SafeIntLib
+
+[Protocols]
+
+[BuildOptions]
+
+[Pcd]
+
