@@ -1,0 +1,30 @@
+[Defines]
+  INF_VERSION                    = 1.25
+  BASE_NAME                      = ShowBGRT 
+  FILE_GUID                      = 4ea87c57-7795-4dcd-0055-747010f3ce51
+  MODULE_TYPE                    = UEFI_APPLICATION
+  VERSION_STRING                 = 1.0
+  ENTRY_POINT                    = ShellCEntryLib
+  VALID_ARCHITECTURES            = X64
+
+[Sources]
+  ShowBGRT.c
+
+[Packages]
+  MdePkg/MdePkg.dec
+  ShellPkg/ShellPkg.dec
+
+
+[LibraryClasses]
+  ShellCEntryLib
+  ShellLib
+  BaseLib
+  BaseMemoryLib
+  UefiLib
+
+[Protocols]
+
+[BuildOptions]
+
+[Pcd]
+
