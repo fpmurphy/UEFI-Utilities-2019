@@ -1,0 +1,30 @@
+[Defines]
+  INF_VERSION                    = 1.25
+  BASE_NAME                      = ScreenShot 
+  FILE_GUID                      = 4ea87c57-7795-5dcd-1055-747010f3ce51
+  MODULE_TYPE                    = UEFI_APPLICATION
+  VERSION_STRING                 = 0.9
+  ENTRY_POINT                    = ShellCEntryLib
+  VALID_ARCHITECTURES            = X64
+
+[Sources]
+  ScreenShot.c
+
+[Packages]
+  MdePkg/MdePkg.dec
+  ShellPkg/ShellPkg.dec
+
+
+[LibraryClasses]
+  ShellCEntryLib
+  ShellLib
+  BaseLib
+  BaseMemoryLib
+  UefiLib
+
+[Protocols]
+
+[BuildOptions]
+
+[Pcd]
+

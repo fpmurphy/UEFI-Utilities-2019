@@ -1,0 +1,39 @@
+[Defines]
+  INF_VERSION                    = 1.25
+  BASE_NAME                      = ScreenshotDriver 
+  FILE_GUID                      = 4ea87c57-7795-5ded-1055-747010f3ce51
+  MODULE_TYPE                    = UEFI_DRIVER
+  VERSION_STRING                 = 0.9
+  ENTRY_POINT                    = ScreenshotDriverEntryPoint
+  UNLOAD_IMAGE                   = ScreenshotDriverUnload
+  VALID_ARCHITECTURES            = X64
+
+[Packages]
+  MdePkg/MdePkg.dec
+  MdeModulePkg/MdeModulePkg.dec
+
+[LibraryClasses]
+  UefiBootServicesTableLib
+  UefiRuntimeServicesTableLib
+  UefiDriverEntryPoint
+  DebugLib
+  PrintLib
+  ShellLib
+  BaseLib
+  BaseMemoryLib
+  UefiLib
+
+[Sources]
+  ScreenshotDriver.c
+  ScreenshotDriver.h
+
+[Packages]
+  MdePkg/MdePkg.dec
+  ShellPkg/ShellPkg.dec
+
+[Depex]
+  gEfiGraphicsOutputProtocolGuid AND
+  gEfiSimpleTextInputExProtocolGuid
+
+[Pcd]
+

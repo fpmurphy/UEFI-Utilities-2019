@@ -70,3 +70,7 @@
 
 #### Applications
   MyApps/DisplayBMP/DisplayBMP.inf
+  MyApps/ShowBGRT/ShowBGRT.inf
+  MyApps/ScreenShot/ScreenShot.inf
+  MyApps/ScreenshotDriver/ScreenshotDriver.inf
+
