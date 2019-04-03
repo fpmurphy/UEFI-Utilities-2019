@@ -1,0 +1,26 @@
+                                  README
+                                 --------
+
+This utility is intended to be used from the UEFI shell prompt on an X86_64 
+platform that supports UEFI 2.3.1 Secure Boot or later.  Unless you sign this
+utility with an appropriate key, this utility will only work on a platform where 
+UEFI Secure Boot is disabled.
+
+Invoke ListCerts -h to view available options.
+
+Valid options include:
+
+     -pk   Display information about the PK
+     -kek  Display information about KEKs
+     -db   Display information about db keys
+     -dbx  Display information about dbx keys
+
+If invoked without an option all keys are displayed.
+
+Most of the certificate parsing code came either directly or was heavily
+derived from work by David Howells of Red Hat for the 3.7 kernel 
+(see .../crypo/asymmetric_keys, .../include, .../lib, etc.) I simply modified 
+the code to work from a UEFI shell, added appropriate OIDs, etc.
+
+Note that the files x509.[hc] only contain a subset of the X509 ASN.1 schema 
+- not all of the X509 ASN.1 schema!

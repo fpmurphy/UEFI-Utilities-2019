@@ -73,4 +73,4 @@
   MyApps/ShowBGRT/ShowBGRT.inf
   MyApps/ScreenShot/ScreenShot.inf
   MyApps/ScreenshotDriver/ScreenshotDriver.inf
-
+  MyApps/ListCerts/ListCerts.inf

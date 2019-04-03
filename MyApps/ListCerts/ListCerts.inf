@@ -1,0 +1,36 @@
+[Defines]
+  INF_VERSION                    = 1.25
+  BASE_NAME                      = ListCerts 
+  FILE_GUID                      = 4ea87c51-6395-3dcd-0055-747010f3ce51
+  MODULE_TYPE                    = UEFI_APPLICATION
+  VERSION_STRING                 = 1.0
+  ENTRY_POINT                    = ShellCEntryLib
+  VALID_ARCHITECTURES            = X64
+
+[Sources.common]
+  ListCerts.c
+  asn1_ber_decoder.c
+  asn1_ber_decoder.h
+  oid_registry.c
+  oid_registry.h
+  oid_registry_data.h
+  x509.c
+  x509.h
+
+[Packages]
+  MdePkg/MdePkg.dec
+  ShellPkg/ShellPkg.dec
+
+[LibraryClasses]
+  ShellCEntryLib
+  ShellLib
+  BaseLib
+  BaseMemoryLib
+  UefiLib
+
+[Protocols]
+
+[BuildOptions]
+
+[Pcd]
+
