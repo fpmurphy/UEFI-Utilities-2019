@@ -1,0 +1,30 @@
+[Defines]
+  INF_VERSION                    = 1.25 
+  BASE_NAME                      = Cpuid
+  FILE_GUID                      = 4AE7E1E8-9DFE-4e3e-85B4-A5F6ABD470FB
+  MODULE_TYPE                    = UEFI_APPLICATION
+  VERSION_STRING                 = 1.0
+  ENTRY_POINT                    = ShellCEntryLib 
+  VALID_ARCHITECTURES            = X64
+
+[Sources]
+  Cpuid.c
+
+[Packages]
+  MdePkg/MdePkg.dec
+  ShellPkg/ShellPkg.dec
+  UefiCpuPkg/UefiCpuPkg.dec
+
+[LibraryClasses]
+  ShellCEntryLib
+  ShellLib
+  ShellCommandLib
+  BaseLib
+  BaseMemoryLib
+  UefiLib
+
+[Protocols]
+
+[BuildOptions]
+
+[Pcd]
