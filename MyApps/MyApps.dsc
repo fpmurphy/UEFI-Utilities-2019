@@ -74,3 +74,7 @@
   MyApps/ScreenShot/ScreenShot.inf
   MyApps/ScreenshotDriver/ScreenshotDriver.inf
   MyApps/ListCerts/ListCerts.inf
+  MyApps/Cpuid/Cpuid.inf
+  MyApps/ShowPCI/ShowPCI.inf
+  MyApps/ShowPCIx/ShowPCIx.inf
+
