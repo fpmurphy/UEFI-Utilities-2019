@@ -368,7 +368,7 @@ ShellAppMain( UINTN Argc,
                                   NULL,
                                   &Interface );
     if (EFI_ERROR(Status)) {
-        Print(L"ERROR: No PCI protocol interface found\n");
+        Print(L"ERROR: Could not find PCI enumeration protocol\n");
         return Status;
     }
 
