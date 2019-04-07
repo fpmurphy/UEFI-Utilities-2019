@@ -77,4 +77,4 @@
   MyApps/Cpuid/Cpuid.inf
   MyApps/ShowPCI/ShowPCI.inf
   MyApps/ShowPCIx/ShowPCIx.inf
-
+  MyApps/ShowEDID/ShowEDID.inf

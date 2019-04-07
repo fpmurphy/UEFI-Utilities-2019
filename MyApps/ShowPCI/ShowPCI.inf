@@ -1,0 +1,31 @@
+[Defines]
+  INF_VERSION                    = 1.25
+  BASE_NAME                      = ShowPCI 
+  FILE_GUID                      = 4ea87c51-7491-4dfd-0055-767013f3ce51
+  MODULE_TYPE                    = UEFI_APPLICATION
+  VERSION_STRING                 = 1.0
+  ENTRY_POINT                    = ShellCEntryLib
+  VALID_ARCHITECTURES            = X64
+
+[Sources]
+  ShowPCI.c
+
+[Packages]
+  MdePkg/MdePkg.dec
+  ShellPkg/ShellPkg.dec 
+ 
+[LibraryClasses]
+  ShellCEntryLib   
+  ShellLib
+  ShellCommandLib
+  BaseLib
+  BaseMemoryLib
+  UefiLib
+  
+[Protocols]
+  gEfiPciRootBridgeIoProtocolGuid             ## CONSUMES
+  
+[BuildOptions]
+
+[Pcd]
+
