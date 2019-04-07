@@ -1,0 +1,30 @@
+[Defines]
+  INF_VERSION                    = 1.25
+  BASE_NAME                      = ShowUSB
+  FILE_GUID                      = 4ea87c51-7491-5dfd-0055-767013f3ce51
+  MODULE_TYPE                    = UEFI_APPLICATION
+  VERSION_STRING                 = 1.0
+  ENTRY_POINT                    = ShellCEntryLib
+  VALID_ARCHITECTURES            = X64
+
+[Sources]
+  ShowUSB.c
+
+[Packages]
+  MdePkg/MdePkg.dec
+  ShellPkg/ShellPkg.dec 
+ 
+[LibraryClasses]
+  ShellCEntryLib   
+  ShellLib
+  ShellCommandLib
+  BaseLib
+  BaseMemoryLib
+  UefiLib
+  
+[Protocols]
+  
+[BuildOptions]
+
+[Pcd]
+
