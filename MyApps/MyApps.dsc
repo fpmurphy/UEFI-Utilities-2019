@@ -80,3 +80,4 @@
   MyApps/ShowEDID/ShowEDID.inf
   MyApps/ShowUSB/ShowUSB.inf
   MyApps/ShowMP/ShowMP.inf
+  MyApps/DateTime/DateTime.inf
