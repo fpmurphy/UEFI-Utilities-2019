@@ -3,10 +3,11 @@
 //
 //  Show BGRT info, display image or save image to file 
 //
-//  License: BSD 2 clause License
+//  License: EDKII license applies to code from EDKII source,
+//           BSD 2 clause license applies to all other code.
 //
-//  Portions Copyright (c) 2016-2017, Microsoft Corporation
-//           Copyright (c) 2018, Intel Corporation. All rights reserved.
+//  Portions Copyright (c) 2016-2017, Microsoft Corporation.
+//           Copyright (c) 2018, Intel Corporation.
 //           See relevant code in EDK11 for exact details
 //
 
@@ -33,7 +34,7 @@
 #include <IndustryStandard/Bmp.h>
 #include <IndustryStandard/Acpi61.h>
 
-#define UTILITY_VERSION L"20190124"
+#define UTILITY_VERSION L"20190611"
 #undef DEBUG
 
 // for option setting
@@ -546,7 +547,7 @@ ParseImage( UINT64 BmpImage,
 //
 // Parse Boot Graphic Resource Table (BGRT)
 //
-static VOID 
+VOID
 ParseBGRT( EFI_ACPI_6_1_BOOT_GRAPHICS_RESOURCE_TABLE *Bgrt, 
            MODE Mode )
 {
@@ -587,7 +588,7 @@ ParseBGRT( EFI_ACPI_6_1_BOOT_GRAPHICS_RESOURCE_TABLE *Bgrt,
 }
 
 
-static int
+int
 ParseRSDP( EFI_ACPI_2_0_ROOT_SYSTEM_DESCRIPTION_POINTER *Rsdp, 
            CHAR16* GuidStr,
            MODE Mode )
@@ -628,8 +629,11 @@ ParseRSDP( EFI_ACPI_2_0_ROOT_SYSTEM_DESCRIPTION_POINTER *Rsdp,
 
 
 VOID
-Usage( VOID )
+Usage( BOOLEAN ErrorMsg )
 {
+    if ( ErrorMsg ) {
+        Print(L"ERROR: Unknown option.\n");
+    }
     Print(L"Usage: ShowBGRT [-v | --verbose]\n");
     Print(L"       ShowBGRT [-s | --save]\n");
     Print(L"       ShowBGRT [-D | --dump]\n");
@@ -643,13 +647,13 @@ EFIAPI
 ShellAppMain( UINTN Argc, 
               CHAR16 **Argv )
 {
-    EFI_CONFIGURATION_TABLE *ect = gST->ConfigurationTable;
     EFI_ACPI_2_0_ROOT_SYSTEM_DESCRIPTION_POINTER *Rsdp = NULL;
-    EFI_GUID gAcpi20TableGuid = EFI_ACPI_20_TABLE_GUID;
-    EFI_GUID gAcpi10TableGuid = ACPI_10_TABLE_GUID;
+    EFI_CONFIGURATION_TABLE *ect = gST->ConfigurationTable;
     EFI_STATUS Status = EFI_SUCCESS;
-    CHAR16 GuidStr[100];
-    MODE Mode;
+    EFI_GUID   gAcpi20TableGuid = EFI_ACPI_20_TABLE_GUID;
+    EFI_GUID   gAcpi10TableGuid = ACPI_10_TABLE_GUID;
+    CHAR16     GuidStr[100];
+    MODE       Mode;
 
     if (Argc == 2) {
         if (!StrCmp(Argv[1], L"--verbose") ||
@@ -670,15 +674,15 @@ ShellAppMain( UINTN Argc,
             return Status;
         } else if (!StrCmp(Argv[1], L"--help") ||
             !StrCmp(Argv[1], L"-h")) {
-            Usage();
+            Usage(FALSE);
             return Status;
         } else {
-            Usage();
+            Usage(TRUE);
             return Status;
         }
     }
     if (Argc > 2) {
-        Usage();
+        Usage(TRUE);
         return Status;
     }
 
