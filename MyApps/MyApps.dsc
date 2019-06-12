@@ -83,4 +83,4 @@
   MyApps/DateTime/DateTime.inf
   MyApps/Beep/Beep.inf
   MyApps/XBeep/XBeep.inf
-
+  MyApps/ShowMSDM/ShowMSDM.inf
