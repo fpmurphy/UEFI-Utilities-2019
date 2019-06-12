@@ -1,0 +1,30 @@
+[Defines]
+  INF_VERSION                    = 1.25
+  BASE_NAME                      = Beep 
+  FILE_GUID                      = 4ea87c51-7395-4dcd-0055-747010f3ce51
+  MODULE_TYPE                    = UEFI_APPLICATION
+  VERSION_STRING                 = 1.0
+  ENTRY_POINT                    = ShellCEntryLib
+  VALID_ARCHITECTURES            = X64
+
+[Sources]
+  Beep.c
+
+[Packages]
+  MdePkg/MdePkg.dec
+  ShellPkg/ShellPkg.dec
+
+[LibraryClasses]
+  ShellCEntryLib
+  ShellLib
+  BaseLib
+  BaseMemoryLib
+  UefiLib
+  IoLib
+
+[Protocols]
+
+[BuildOptions]
+
+[Pcd]
+

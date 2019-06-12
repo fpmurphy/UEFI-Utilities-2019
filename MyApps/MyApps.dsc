@@ -81,3 +81,6 @@
   MyApps/ShowUSB/ShowUSB.inf
   MyApps/ShowMP/ShowMP.inf
   MyApps/DateTime/DateTime.inf
+  MyApps/Beep/Beep.inf
+  MyApps/XBeep/XBeep.inf
+
