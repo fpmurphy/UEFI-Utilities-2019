@@ -84,3 +84,4 @@
   MyApps/Beep/Beep.inf
   MyApps/XBeep/XBeep.inf
   MyApps/ShowMSDM/ShowMSDM.inf
+  MyApps/ShowACPI/ShowACPI.inf
