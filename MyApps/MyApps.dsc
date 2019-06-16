@@ -86,3 +86,4 @@
   MyApps/ShowMSDM/ShowMSDM.inf
   MyApps/ShowACPI/ShowACPI.inf
   MyApps/ShowFACS/ShowFACS.inf
+  MyApps/ShowSLIC/ShowSLIC.inf
