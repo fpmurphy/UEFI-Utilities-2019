@@ -87,3 +87,4 @@
   MyApps/ShowACPI/ShowACPI.inf
   MyApps/ShowFACS/ShowFACS.inf
   MyApps/ShowSLIC/ShowSLIC.inf
+  MyApps/ShowESRT/ShowESRT.inf

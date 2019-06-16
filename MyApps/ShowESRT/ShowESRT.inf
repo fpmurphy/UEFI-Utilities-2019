@@ -1,0 +1,30 @@
+[Defines]
+  INF_VERSION                    = 1.25
+  BASE_NAME                      = ShowESRT 
+  FILE_GUID                      = 4ea87c51-7491-4dfd-0055-747010f3ce51
+  MODULE_TYPE                    = UEFI_APPLICATION
+  VERSION_STRING                 = 1.0
+  ENTRY_POINT                    = ShellCEntryLib
+  VALID_ARCHITECTURES            = X64
+
+[Sources]
+  ShowESRT.c
+
+[Packages]
+  MdePkg/MdePkg.dec
+  ShellPkg/ShellPkg.dec 
+
+
+[LibraryClasses]
+  ShellCEntryLib   
+  ShellLib
+  BaseLib
+  BaseMemoryLib
+  UefiLib
+  
+[Protocols]
+  
+[BuildOptions]
+
+[Pcd]
+
