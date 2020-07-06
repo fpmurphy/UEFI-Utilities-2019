@@ -1,7 +1,7 @@
 //
-//  Copyright (c) 2019   Finnbarr P. Murphy.   All rights reserved.
+//  Copyright (c) 2019 - 2020   Finnbarr P. Murphy.   All rights reserved.
 //
-//  Show date and time 
+//  Show date and time or GetTime debugging information 
 //
 //  License: EDKII license applies to code from EDKII source,
 //           BSD 2 clause license applies to all other code.
@@ -21,8 +21,40 @@
 
 #include <Protocol/LoadedImage.h>
 
-#define UTILITY_VERSION L"20190609"
+#define UTILITY_VERSION L"20200609"
 #undef DEBUG
+
+
+EFI_STATUS
+DebugGetTime( VOID )
+{
+    EFI_TIME_CAPABILITIES TimeCapabilities;
+    EFI_TIME              Time;
+    EFI_STATUS            Status = EFI_SUCCESS;
+
+    Status = gRT->GetTime(&Time, &TimeCapabilities);
+    if (EFI_ERROR(Status)) {
+        Print(L"ERROR: GetTime: %d\n", Status);
+        return Status;
+    }
+
+    Print(L"Year        [%d]\n", Time.Year);
+    Print(L"Month       [%02d]\n", Time.Month);
+    Print(L"Day         [%02d]\n", Time.Day);
+    Print(L"Hour        [%02d]\n", Time.Hour);
+    Print(L"Minute      [%02d]\n", Time.Minute);
+    Print(L"Second      [%02d]\n", Time.Second);
+    Print(L"Nanosecond  [%d]\n", Time.Nanosecond);
+    Print(L"TimeZone    [%d]\n", Time.TimeZone);
+    Print(L"Daylight    [%d]\n", Time.Daylight);
+    Print(L"\n");
+    Print(L"Resolution  [%d]\n", TimeCapabilities.Resolution);
+    Print(L"Accuracy    [%d]\n", TimeCapabilities.Accuracy);
+    Print(L"SetsToZero  [%d]\n", TimeCapabilities.SetsToZero);
+    Print(L"\n");
+        
+    return Status;
+}
 
 
 VOID
@@ -32,6 +64,7 @@ Usage( BOOLEAN ErrorMsg )
         Print(L"ERROR: Unknown option.\n");
     }
     Print(L"Usage: DateTime [-V | --version]\n");
+    Print(L"       DateTime [-d | --debug]\n");
 }
 
 
@@ -47,6 +80,10 @@ ShellAppMain( UINTN Argc,
         if (!StrCmp(Argv[1], L"--version") ||
             !StrCmp(Argv[1], L"-V")) {
             Print(L"Version: %s\n", UTILITY_VERSION);
+            return Status;
+        } else if (!StrCmp(Argv[1], L"--debug") ||
+            !StrCmp(Argv[1], L"-d")) {
+            Status = DebugGetTime();
             return Status;
         } else if (!StrCmp(Argv[1], L"--help") ||
             !StrCmp(Argv[1], L"-h")) {
