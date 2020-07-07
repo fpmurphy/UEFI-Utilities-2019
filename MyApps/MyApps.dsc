@@ -89,3 +89,4 @@
   MyApps/ShowSLIC/ShowSLIC.inf
   MyApps/ShowESRT/ShowESRT.inf
   MyApps/ShowFreq/ShowFreq.inf
+  MyApps/ShowHIIPkg/ShowHIIPkg.inf
