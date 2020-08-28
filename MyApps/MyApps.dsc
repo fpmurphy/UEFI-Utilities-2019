@@ -90,3 +90,7 @@
   MyApps/ShowESRT/ShowESRT.inf
   MyApps/ShowFreq/ShowFreq.inf
   MyApps/ShowHIIPkg/ShowHIIPkg.inf
+  
+[BuildOptions]
+  GCC:*_*_*_CC_FLAGS     = -Wno-error=unused-but-set-variable -Wno-error=maybe-uninitialized -Wno-error=int-to-pointer-cast 
+
