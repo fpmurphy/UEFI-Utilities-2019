@@ -124,6 +124,7 @@ EFI_DRIVER_CONFIGURATION2_PROTOCOL gScreenshotDriverConfiguration2 = {
 
 
 EFI_STATUS
+EFIAPI
 ScreenshotDriverConfigurationSetOptions( EFI_DRIVER_CONFIGURATION2_PROTOCOL       *This,
                                          EFI_HANDLE                               ControllerHandle,
                                          EFI_HANDLE                               ChildHandle,
@@ -135,6 +136,7 @@ ScreenshotDriverConfigurationSetOptions( EFI_DRIVER_CONFIGURATION2_PROTOCOL     
 
 
 EFI_STATUS
+EFIAPI
 ScreenshotDriverConfigurationOptionsValid( EFI_DRIVER_CONFIGURATION2_PROTOCOL *This,
                                            EFI_HANDLE                         ControllerHandle,
                                            EFI_HANDLE                         ChildHandle )
@@ -144,6 +146,7 @@ ScreenshotDriverConfigurationOptionsValid( EFI_DRIVER_CONFIGURATION2_PROTOCOL *T
 
 
 EFI_STATUS
+EFIAPI
 ScreenshotDriverConfigurationForceDefaults( EFI_DRIVER_CONFIGURATION2_PROTOCOL       *This,
                                             EFI_HANDLE                               ControllerHandle,
                                             EFI_HANDLE                               ChildHandle,
@@ -155,6 +158,7 @@ ScreenshotDriverConfigurationForceDefaults( EFI_DRIVER_CONFIGURATION2_PROTOCOL  
 
 
 EFI_STATUS
+EFIAPI
 ScreenshotDriverRunDiagnostics( EFI_DRIVER_DIAGNOSTICS2_PROTOCOL *This,
                                 EFI_HANDLE                       ControllerHandle,
                                 EFI_HANDLE                       ChildHandle, 
@@ -172,6 +176,7 @@ ScreenshotDriverRunDiagnostics( EFI_DRIVER_DIAGNOSTICS2_PROTOCOL *This,
 //  Retrieve user readable name of the driver
 //
 EFI_STATUS
+EFIAPI
 ScreenshotDriverComponentNameGetDriverName( EFI_COMPONENT_NAME2_PROTOCOL *This,
                                             CHAR8                        *Language,
                                             CHAR16                       **DriverName )
@@ -188,6 +193,7 @@ ScreenshotDriverComponentNameGetDriverName( EFI_COMPONENT_NAME2_PROTOCOL *This,
 //  Retrieve user readable name of controller being managed by a driver
 //
 EFI_STATUS
+EFIAPI
 ScreenshotDriverComponentNameGetControllerName( EFI_COMPONENT_NAME2_PROTOCOL *This,
                                                 EFI_HANDLE                   ControllerHandle,
                                                 EFI_HANDLE                   ChildHandle,
@@ -202,6 +208,7 @@ ScreenshotDriverComponentNameGetControllerName( EFI_COMPONENT_NAME2_PROTOCOL *Th
 //  Start this driver on Controller
 //
 EFI_STATUS
+EFIAPI
 ScreenshotDriverBindingStart( EFI_DRIVER_BINDING_PROTOCOL *This,
                               EFI_HANDLE                  Controller,
                               EFI_DEVICE_PATH_PROTOCOL    *RemainingDevicePath )
@@ -214,6 +221,7 @@ ScreenshotDriverBindingStart( EFI_DRIVER_BINDING_PROTOCOL *This,
 //  Stop this driver on ControllerHandle.
 //
 EFI_STATUS
+EFIAPI
 ScreenshotDriverBindingStop( EFI_DRIVER_BINDING_PROTOCOL *This,
                              EFI_HANDLE                  Controller,
                              UINTN                       NumberOfChildren,
@@ -227,6 +235,7 @@ ScreenshotDriverBindingStop( EFI_DRIVER_BINDING_PROTOCOL *This,
 //  See if this driver supports ControllerHandle.
 //
 EFI_STATUS
+EFIAPI
 ScreenshotDriverBindingSupported( EFI_DRIVER_BINDING_PROTOCOL *This,
                                   EFI_HANDLE                  Controller,
                                   EFI_DEVICE_PATH_PROTOCOL    *RemainingDevicePath )
