@@ -1,0 +1,30 @@
+[Defines]
+  INF_VERSION                    = 1.25
+  BASE_NAME                      = ShowBoot 
+  FILE_GUID                      = 4ea87c51-7491-4dfd-0055-747010f3ce51
+  MODULE_TYPE                    = UEFI_APPLICATION
+  VERSION_STRING                 = 0.8
+  ENTRY_POINT                    = ShellCEntryLib
+  VALID_ARCHITECTURES            = X64
+
+[Sources]
+  ShowBoot.c
+
+[Packages]
+  MdePkg/MdePkg.dec
+  ShellPkg/ShellPkg.dec 
+
+
+[LibraryClasses]
+  ShellCEntryLib   
+  ShellLib
+  BaseLib
+  BaseMemoryLib
+  UefiLib
+  
+[Protocols]
+  
+[BuildOptions]
+
+[Pcd]
+

@@ -90,3 +90,4 @@
   MyApps/ShowESRT/ShowESRT.inf
   MyApps/ShowFreq/ShowFreq.inf
   MyApps/ShowHIIPkg/ShowHIIPkg.inf
+  MyApps/ShowBoot/ShowBoot.inf
