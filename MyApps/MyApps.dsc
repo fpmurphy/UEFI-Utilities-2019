@@ -91,4 +91,4 @@
   MyApps/ShowFreq/ShowFreq.inf
   MyApps/ShowHIIPkg/ShowHIIPkg.inf
   MyApps/ShowBoot/ShowBoot.inf
-  MyApps/ShowQVI/ShowQVI.inf
+  MyApps/ShowPCR/ShowPCR.inf
